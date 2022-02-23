@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 // import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Home from "./component/Home/Home";
 import NavBar from "./component/NavBar/Navbar";
-import Banner from "./component/Banner/Banner";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Banner />
+    <Home />
   </React.StrictMode>,
   document.getElementById("root")
 );

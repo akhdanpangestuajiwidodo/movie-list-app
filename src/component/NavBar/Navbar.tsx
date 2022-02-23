@@ -6,7 +6,7 @@ const NavBar = () => {
     <div className="navbar-parent">
       <ul>
         <li className="left">
-          <a href="default.asp">Logo</a>
+          <a href="default.asp">DanMov</a>
         </li>
         <div className="right">
           <li className="">
