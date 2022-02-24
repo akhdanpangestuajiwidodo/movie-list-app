@@ -1,0 +1,26 @@
+.parent-favorite {
+  background-color: #2a282c;
+  width: 100%;
+}
+
+.favorite-container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-favorite {
+  font-weight: 600;
+  color: rgb(56, 52, 52);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-favorite {
+  float: left;
+}
+
+.right-favorite {
+  float: right;
+}
+
+.body-favorite {
+  padding: 40px;
+}

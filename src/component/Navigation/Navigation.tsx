@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Detail from "../Detail/Detail";
+import Favorite from "../Favorite/Favorite";
 
 export default function Navigation() {
   return (
@@ -9,6 +10,7 @@ export default function Navigation() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </BrowserRouter>
   );
