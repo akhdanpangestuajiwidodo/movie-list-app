@@ -3,7 +3,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: #0070cc;
   text-align: center;
   padding-left: 75px;
   padding-right: 100px;
@@ -20,7 +20,7 @@ li {
   color: white;
   font-size: large;
   font-weight: 700;
-  background-color: rgb(236, 181, 30);
+  background-color: #ecb51e;
   border-radius: 5px;
   padding: 10px;
 }
@@ -39,7 +39,7 @@ li a {
 
 .right a {
   margin-left: 40px;
-  color: #adbbc2;
+  color: white;
   font-size: 14px;
   font-weight: 600;
 }

@@ -4,7 +4,7 @@ import "./nav-bar.css";
 const NavBar = () => {
   return (
     <div className="navbar-parent">
-      <ul>
+      <ul className="ul-navbar">
         <li className="left">
           <a href="default.asp">DanMov</a>
         </li>
