@@ -7,7 +7,7 @@
 .container-detail {
   display: grid;
   grid-template-columns: 50% auto;
-  background-color: #2a282c;
+  background-color: #0070cc;
   padding-left: 70px;
   padding-right: 10px;
   padding-top: 50px;
@@ -90,7 +90,7 @@
   .container-detail {
     display: grid;
     grid-template-columns: 50% auto;
-    background-color: #2a282c;
+    background-color: #0070cc;
     padding-left: 70px;
     padding-right: 10px;
     padding-top: 10px;

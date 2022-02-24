@@ -55,7 +55,7 @@ li a:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: #0070cc;
     text-align: center;
     padding-left: 75px;
     padding-right: 80px;
@@ -75,8 +75,9 @@ li a:hover {
 
 @media only screen and (max-width: 595px) {
   .navfavorite-right a {
-    margin-left: 0px;
-    color: #adbbc2;
+    margin-top: 5px;
+    margin-left: 140px;
+    color: white;
     font-size: 14px;
     font-weight: 600;
   }
@@ -88,7 +89,7 @@ li a:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: #0070cc;
     text-align: center;
     padding-left: 40px;
     padding-right: 10px;

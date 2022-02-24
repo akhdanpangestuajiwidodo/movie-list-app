@@ -11,6 +11,7 @@ export default function Navigation() {
         <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

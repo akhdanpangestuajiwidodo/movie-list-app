@@ -4,7 +4,7 @@ import "./card.css";
 
 const Card = () => {
   return (
-    <Link to={"/favorite"}>
+    <Link to={"/detail"}>
       <div className="card">
         <div className="padding-card">
           <img

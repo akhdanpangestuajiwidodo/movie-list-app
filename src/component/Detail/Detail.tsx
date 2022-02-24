@@ -21,7 +21,9 @@ export default function Detail() {
             reprehenderit explicabo.
           </p>
           <p className="date-detail">Release date : 22 November 2019</p>
-          <button className="button-detail">Kembali</button>
+          <Link to={"/"}>
+            <button className="button-detail">Kembali</button>
+          </Link>
         </div>
       </div>
     </div>
