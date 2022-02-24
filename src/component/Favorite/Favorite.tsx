@@ -10,10 +10,6 @@ const Favorite = () => {
       <NavFavorite />
       <div className="body-favorite">
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   );

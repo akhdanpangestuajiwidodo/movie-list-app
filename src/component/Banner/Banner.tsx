@@ -16,11 +16,7 @@ const Banner = () => {
         <p className="date-banner">Release date : 22 November 2019</p>
         <button className="button-banner">Lihat</button>
       </div>
-      <img
-        src={require("../../assets/banner.png")}
-        alt=""
-        className="img-banner"
-      />
+      <img src={"../../assets/banner.png"} alt="" className="img-banner" />
     </div>
   );
 };
