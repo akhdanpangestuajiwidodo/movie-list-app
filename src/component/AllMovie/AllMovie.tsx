@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import "./allmovie.css";
 
 const AllMovie = () => {
-  const [dataCard, setDataCard] = useState([
+  const [dataCard] = useState([
     {
       title: "Title 1",
       desc: "Desc 1",
