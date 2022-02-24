@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./card.css";
 
 const Card = () => {
   return (
-    <div className="card">
-      <div className="padding-card">
-        <img
-          src={require("../../assets/img_avatar.png")}
-          className="img-card"
-        />
-        <div className="container">
-          <h4>Judul</h4>
-          <p>Genre</p>
+    <Link to={"/detail"}>
+      <div className="card">
+        <div className="padding-card">
+          <img
+            src={require("../../assets/img_avatar.png")}
+            className="img-card"
+            alt=""
+          />
+          <div className="container">
+            <h4>Judul</h4>
+            <p>Genre</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
