@@ -8,7 +8,7 @@ const CardFavorite = (props: any) => {
       <div className="card">
         <div className="padding-card">
           <img
-            src={"../../assets/img_avatar.png"}
+            src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${props.dataMovie.poster_path}`}
             className="img-card"
             alt=""
           />
