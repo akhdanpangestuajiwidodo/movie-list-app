@@ -10,7 +10,7 @@ const getOngoingMovie = (page: any) => {
     url:
       baseUrl +
       "/movie/now_playing?api_key=be7ddc7074fe58edbe5eb7645a53072d&language=en-US&page=" +
-      58,
+      { page },
   })
     .then((response) => {
       return {

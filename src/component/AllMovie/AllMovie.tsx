@@ -4,10 +4,28 @@ import "./allmovie.css";
 import { getOngoingMovie } from "../../service/ApiServices";
 
 const AllMovie = () => {
-  const [dataCard] = useState();
+  //Handle Data Movie
+  const [dataMovie, setDataMovie] = useState([]);
+
+  //Handle Page Movie
+  const [pageMovie, setPageMovie] = useState(1);
+
+  //Handle Error
+  const [errorStatus, setErroStatus] = useState("");
 
   useEffect(() => {
-    getOngoingMovie(1);
+    getOngoingMovie(pageMovie)
+      .then((result) => {
+        if (result.statusCode == 200) {
+          setDataMovie(result.dataMovie);
+        } else {
+          throw new Error("False GET Data Movie");
+        }
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+        setErroStatus(error);
+      });
   });
 
   // const listItems = dataCard.map((card) => <Card dataCard={card} />);
