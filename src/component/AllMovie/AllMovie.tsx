@@ -3,16 +3,6 @@ import Card from "../Card/Card";
 import "./allmovie.css";
 import { getOngoingMovie } from "../../service/ApiServices";
 
-interface GetMovie {
-  dates: any;
-  page: any;
-  results: any;
-  total_pages: any;
-  total_results: any;
-}
-
-const defaultPosts: GetMovie[] = [];
-
 const AllMovie = () => {
   //Handle Data Movie
   const [dataMovie, setDataMovie] = useState([]);

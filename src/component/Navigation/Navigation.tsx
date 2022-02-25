@@ -4,6 +4,10 @@ import Home from "../Home/Home";
 import Detail from "../Detail/Detail";
 import Favorite from "../Favorite/Favorite";
 
+interface idDetail {
+  id: string;
+}
+
 export default function Navigation() {
   return (
     <BrowserRouter>
