@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //Base Url Api
-const baseUrl = "https://api.themoviedb.org/3/";
+const baseUrl = "https://api.themoviedb.org/3";
 
 //Get API (Ongoing Movie)
 const getOngoingMovie = (page: any) => {
@@ -10,18 +10,20 @@ const getOngoingMovie = (page: any) => {
     url:
       baseUrl +
       "/movie/now_playing?api_key=be7ddc7074fe58edbe5eb7645a53072d&language=en-US&page=" +
-      page,
+      58,
   })
-    .then(function (response) {
-      // handle success
-      console.log(response);
+    .then((response) => {
+      return {
+        statusCode: response.status,
+        dataMovie: response.data,
+      };
     })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      // always executed
+    .catch((error) => {
+      console.log(error.response.data.status_code);
+      return {
+        statusCode: error.response.data.status_code,
+        dataMovie: error.response.data,
+      };
     });
 };
 
