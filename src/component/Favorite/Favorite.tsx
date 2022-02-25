@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./favorite.css";
-import Card from "../Card/Card";
-import { Link } from "react-router-dom";
+import CardFavorite from "../Card/CardFavorite";
 import NavFavorite from "./NavFavorite";
 
-const Favorite = () => {
+const Favorite = (props: any) => {
+  //   console.log(props.dataFavoriteMovie.title);
+
   return (
     <div className="favorite-container">
       <NavFavorite />
       <div className="body-favorite">
-        <Card />
+        <CardFavorite />
       </div>
     </div>
   );

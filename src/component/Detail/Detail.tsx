@@ -1,11 +1,22 @@
 import "./detail.css";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Detail() {
   const location = useLocation();
   const { from }: any = location.state;
-  console.log(from.title);
+
+  //Default value get from cookies
+  const [dataFavoriteMovie, setDataFavoriteMovie] = useState([{}]);
+
+  const addFavorite = (dataInput: any) => {
+    let data = [...dataFavoriteMovie];
+    data.push(dataInput);
+    setDataFavoriteMovie(data);
+
+    //sycn data to
+  };
+
   return (
     <div className="container-parent">
       <div className="container-detail">
@@ -18,6 +29,12 @@ export default function Detail() {
           <Link to={"/"}>
             <button className="button-detail">Kembali</button>
           </Link>
+          <button
+            className="button-addFavorite"
+            onClick={() => addFavorite(from)}
+          >
+            Tambah Favorite
+          </button>
         </div>
       </div>
     </div>

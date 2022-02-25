@@ -4,6 +4,17 @@
   margin-top: 10px; */
   padding: 40px;
 }
+
+.button-addFavorite {
+  margin-top: 20px;
+  border: none;
+  background-color: rgb(236, 181, 30);
+  color: white;
+  font-weight: 700;
+  padding: 9px;
+  width: 200px;
+  border-radius: 20px;
+}
 .container-detail {
   display: grid;
   grid-template-columns: 50% auto;
@@ -60,12 +71,13 @@
 .button-detail {
   margin-top: 20px;
   border: none;
-  background-color: rgb(236, 181, 30);
-  color: white;
+  background-color: white;
+  color: black;
   font-weight: 700;
   padding: 9px;
   width: 200px;
   border-radius: 20px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 1311px) {
@@ -130,8 +142,8 @@
   .button-detail {
     margin-top: 10px;
     border: none;
-    background-color: rgb(236, 181, 30);
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: 700;
     padding: 9px;
     width: 200px;
@@ -182,8 +194,8 @@
   .button-detail {
     margin-top: 10px;
     border: none;
-    background-color: rgb(236, 181, 30);
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: 700;
     padding: 9px;
     width: 200px;
@@ -218,8 +230,8 @@
   .button-detail {
     margin-top: 10px;
     border: none;
-    background-color: rgb(236, 181, 30);
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: 700;
     padding: 9px;
     width: 200px;
@@ -254,8 +266,8 @@
   .button-detail {
     margin-top: 10px;
     border: none;
-    background-color: rgb(236, 181, 30);
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: 700;
     padding: 9px;
     width: 200px;
