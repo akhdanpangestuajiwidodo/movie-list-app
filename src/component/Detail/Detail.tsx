@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Detail() {
   const location = useLocation();
+  const name = new URLSearchParams(location.search).get("id");
   const { from }: any = location.state;
 
   //Default value get from cookies
@@ -30,6 +31,7 @@ export default function Detail() {
           <p className="genre-detail">{`Vote Average : ${from.vote_average}`}</p>
           <p className="desc-detail">{from.overview}</p>
           <p className="date-detail">{`Release Date : ${from.release_date}`}</p>
+          <p className="date-detail">{`QS : ${name}`}</p>
           <Link to={"/"}>
             <button className="button-detail">Kembali</button>
           </Link>
