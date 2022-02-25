@@ -3,6 +3,16 @@ import Card from "../Card/Card";
 import "./allmovie.css";
 import { getOngoingMovie } from "../../service/ApiServices";
 
+interface GetMovie {
+  dates: any;
+  page: any;
+  results: any;
+  total_pages: any;
+  total_results: any;
+}
+
+const defaultPosts: GetMovie[] = [];
+
 const AllMovie = () => {
   //Handle Data Movie
   const [dataMovie, setDataMovie] = useState([]);
@@ -10,29 +20,26 @@ const AllMovie = () => {
   //Handle Page Movie
   const [pageMovie, setPageMovie] = useState(1);
 
-  //Handle Error
-  const [errorStatus, setErroStatus] = useState("");
-
   useEffect(() => {
-    getOngoingMovie(pageMovie)
+    getMovie(pageMovie);
+  }, []);
+
+  const getMovie = (pageMovie: any) => {
+    return getOngoingMovie(pageMovie)
       .then((result) => {
-        if (result.statusCode == 200) {
-          setDataMovie(result.dataMovie);
-        } else {
-          throw new Error("False GET Data Movie");
-        }
+        setDataMovie(result.dataMovie.results);
       })
       .catch((error) => {
         console.log("Error: ", error);
-        setErroStatus(error);
       });
-  });
+  };
 
-  // const listItems = dataCard.map((card) => <Card dataCard={card} />);
+  let elements = dataMovie.map((abc) => <Card dataMovie={abc} />);
+
   return (
     <div className="allmovie-container">
       <p className="title-allmovie">Recommended Movies</p>
-      {/* {listItems} */}
+      {elements}
     </div>
   );
 };
