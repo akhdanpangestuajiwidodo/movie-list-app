@@ -1,6 +1,9 @@
 import "./detail.css";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Cookies from "js-cookie";
+
+const result: string[] = [];
 
 export default function Detail() {
   const location = useLocation();
@@ -8,14 +11,28 @@ export default function Detail() {
   const { from }: any = location.state;
 
   //Default value get from cookies
-  const [dataFavoriteMovie, setDataFavoriteMovie] = useState([{}]);
+  const [dataFavoriteMovie, setDataFavoriteMovie] = useState(result);
+  const [statusFavorite, setStatusFavorite] = useState(false);
 
   const addFavorite = (dataInput: any) => {
     let data = [...dataFavoriteMovie];
-    data.push(dataInput);
-    setDataFavoriteMovie(data);
 
-    //sycn data to
+    data.forEach((dataLama) => {
+      if (dataLama == dataInput) {
+        setStatusFavorite(true);
+      }
+    });
+
+    if (statusFavorite == true) {
+      alert("Sudah Ditambah");
+      return false;
+    } else {
+      console.log(typeof dataInput);
+      data.push(dataInput);
+      setDataFavoriteMovie(data);
+
+      Cookies.set("favoriteMovies", JSON.stringify(data));
+    }
   };
 
   return (
@@ -35,12 +52,22 @@ export default function Detail() {
           <Link to={"/"}>
             <button className="button-detail">Kembali</button>
           </Link>
-          <button
-            className="button-addFavorite"
-            onClick={() => addFavorite(from)}
-          >
-            Tambah Favorite
-          </button>
+          {statusFavorite == false ? (
+            <button
+              className="button-addFavorite"
+              onClick={() => addFavorite(from)}
+            >
+              Tambah Favorite
+            </button>
+          ) : (
+            <button
+              style={{ backgroundColor: "red" }}
+              className="button-addFavorite"
+              onClick={() => addFavorite(from)}
+            >
+              Sudah Ditambahkan
+            </button>
+          )}
         </div>
       </div>
     </div>
