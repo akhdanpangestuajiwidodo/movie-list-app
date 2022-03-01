@@ -3,10 +3,7 @@ import "./card.css";
 
 const Card = (props: any) => {
   return (
-    <Link
-      to={`/detail?movieId${props.dataMovie.id}`}
-      state={{ from: props.dataMovie }}
-    >
+    <Link to={"/detail"} state={{ from: props.dataMovie }}>
       <div className="card">
         <div className="padding-card">
           <img

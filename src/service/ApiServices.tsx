@@ -5,14 +5,15 @@ const baseUrl = "https://api.themoviedb.org/3";
 
 //Get API (Ongoing Movie)
 const getOngoingMovie = (page: any) => {
+  console.log("Ini Page Masuk", page);
   return axios({
     method: "get",
     url:
       baseUrl +
-      "/movie/now_playing?api_key=be7ddc7074fe58edbe5eb7645a53072d&language=en-US&page=" +
-      { page },
+      `/movie/now_playing?api_key=be7ddc7074fe58edbe5eb7645a53072d&language=en-US&page=${page}`,
   })
     .then((response) => {
+      console.log("Ini Data Baru", response.data);
       return {
         statusCode: response.status,
         dataMovie: response.data,

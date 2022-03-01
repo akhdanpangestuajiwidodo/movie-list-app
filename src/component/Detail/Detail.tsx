@@ -3,42 +3,56 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const result: string[] = [];
+const result: any[] = [];
 
 export default function Detail() {
   const location = useLocation();
   const { from }: any = location.state;
 
-  //Default value get from cookies
+  //Use State data favorite image
   const [dataFavoriteMovie, setDataFavoriteMovie] = useState(result);
-  const [statusFavorite, setStatusFavorite] = useState(false);
 
-  useEffect(() => {
-    getFavoriteMovies();
-    searchFavoriteMovies();
-  }, []);
+  //Use state for change button add favorite
+  const [statusIsFavorite, setStatusFavorite] = useState(false);
 
   const getFavoriteMovies = () => {
     let cookies = Cookies.get("favoriteMovies");
-    if (cookies == undefined) {
+    if (cookies === undefined) {
       return [];
     } else {
-      setDataFavoriteMovie(JSON.parse(Cookies.get("favoriteMovies") as string));
+      let dataBaru = JSON.parse(cookies as string);
+      setDataFavoriteMovie(dataBaru);
     }
   };
 
-  const searchFavoriteMovies = () => {
-    dataFavoriteMovie.forEach((dataLama) => {
-      if (dataLama == from) {
+  // const checkMovie = () => {
+  //   let data = [...dataFavoriteMovie];
+  //   console.log("Data Baruuu", data);
+  //   setTimeout(() => {
+  //     data.forEach((movie) => {
+  //       console.log("Data Movie Bos", movie.id);
+  //       if (movie.id === from.id) {
+  //         console.log("Masuk");
+  //         setStatusFavorite(true);
+  //       }
+  //     });
+  //   }, 3000);
+  // };
+
+  useEffect(() => {
+    getFavoriteMovies();
+    console.log("Terpanggil");
+    dataFavoriteMovie.forEach((element) => {
+      if (element.id === from.id) {
         setStatusFavorite(true);
       }
     });
-  };
+  }, [dataFavoriteMovie.length]);
 
   const addFavorite = (dataInput: any) => {
     let data = [...dataFavoriteMovie];
 
-    if (statusFavorite == true) {
+    if (statusIsFavorite === true) {
       alert("Sudah Ditambah");
       return false;
     } else {
@@ -65,7 +79,8 @@ export default function Detail() {
           <Link to={"/"}>
             <button className="button-detail">Kembali</button>
           </Link>
-          {statusFavorite == false ? (
+
+          {statusIsFavorite === false ? (
             <button
               className="button-addFavorite"
               onClick={() => addFavorite(from)}
