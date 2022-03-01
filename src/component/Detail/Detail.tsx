@@ -51,15 +51,23 @@ export default function Detail() {
 
   const addFavorite = (dataInput: any) => {
     let data = [...dataFavoriteMovie];
-
+    let statementAlert = "Berhasil Ditambah";
     if (statusIsFavorite === true) {
-      alert("Sudah Ditambah");
+      statementAlert = "Berhasil Dihapus";
+      const movieAfterDelete = data.filter(
+        (movie) => movie.id !== dataInput.id
+      );
+      setDataFavoriteMovie(movieAfterDelete);
+      Cookies.set("favoriteMovies", JSON.stringify(movieAfterDelete));
+      alert(statementAlert);
+      setStatusFavorite(false);
       return false;
     } else {
       data.push(dataInput);
       setDataFavoriteMovie(data);
       setStatusFavorite(true);
       Cookies.set("favoriteMovies", JSON.stringify(data));
+      alert(statementAlert);
     }
   };
 
@@ -93,7 +101,7 @@ export default function Detail() {
               className="button-addFavorite"
               onClick={() => addFavorite(from)}
             >
-              Sudah Ditambahkan
+              Hapus Favorite
             </button>
           )}
         </div>
