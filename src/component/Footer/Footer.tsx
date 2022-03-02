@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad sapiente
-        autem perspiciatis quam sint totam quae ab quibusdam. Praesentium
-        molestias perferendis possimus cumque minima quis totam saepe
-        repudiandae veniam natus!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+        molestiae voluptatibus fugit optio repudiandae obcaecati architecto sint
+        laboriosam at. Repellendus architecto corrupti id eum atque labore est
+        voluptates debitis optio?
       </div>
     </div>
   );
