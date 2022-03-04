@@ -8,7 +8,7 @@ const API_KEY = "be7ddc7074fe58edbe5eb7645a53072d";
 
 //Get API (Ongoing Movie)
 const getOngoingMovie = (page: any) => {
-  console.log("ASU", page);
+  console.log("Page Data ke", page);
   return axios({
     method: "get",
     url:

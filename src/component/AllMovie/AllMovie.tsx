@@ -26,21 +26,12 @@ const AllMovie = () => {
 
       const windowBottom = windowHeight + window.pageYOffset;
       setScrollPosition(window.scrollY);
-      // const endScroll = String(document.body.scrollHeight).substring(0, 4);
-      // // const scroll = String(windowBottom).substring(0, 4);
-      // console.log(
-      //   "DH=",
-      //   document.body.scrollHeight,
-      //   "vs",
-      //   "WB=",
-      //   windowBottom + 1
-      // );
       if (document.body.scrollHeight <= windowBottom) {
-        setPageMovie(pageMovie + 1);
+        if (pageMovie + 1 < totalPage) {
+          setPageMovie(pageMovie + 1);
+        }
         return;
       }
-
-      console.log(dataMovie);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,7 +39,6 @@ const AllMovie = () => {
 
   useEffect(() => {
     async function getMovie() {
-      console.log("Page Ke:", pageMovie);
       const data = await getOngoingMovie(pageMovie);
       const listDataMovie: any = dataMovie;
       for (const iterator of data.dataMovie.results) {
@@ -94,7 +84,6 @@ const AllMovie = () => {
     async function getMovie() {
       const data = await getOngoingMovie(pageMovie);
       setDataMovie(data.dataMovie.results);
-      console.log(data);
     }
 
     getMovie();
